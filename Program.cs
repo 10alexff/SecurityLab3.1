@@ -14,10 +14,16 @@ namespace Lab3_1
 			// Console.WriteLine(a); // знайшовши а 
 			double c = find_c(x, a, m);
 			// Console.WriteLine(c); // знайшовши с - можемо отримати наступне "рандомне" значення 
-			// результат - наступне значення
+			double xNext = LCG(x[2], a, c, m); // результат - наступне значення
+			Console.WriteLine(xNext);
 
 			//Perevirka();
 
+		}
+
+		public static double LCG(int x, double a, double c, int m)
+		{
+			return (x * a + c) % m;
 		}
 		public static double find_c(int[] x, double a, int m)
 		{
