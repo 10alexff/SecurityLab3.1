@@ -57,6 +57,31 @@ namespace Lab3_1
 			}
 		}
 
+		public static void Perevirka()
+		{
+			int[] y = new int[6] { -1517823580, 101734579, -1206532490, -1541207203, -1529703144, 299898263 };
+			int m2 = (int)(Math.Pow(2, 32));
+			double c2 = 1013904223;
+			double a2 = 1664525;
+			double f2 = LCG(1818388024, a2, c2, m2);
+
+			for (int a = 0; a < m2; a++)
+			{
+				var x1 = (y[0] * a + c2) % m2;
+				if (x1 != y[1])
+				{
+					continue;
+				}
+				var x2 = (y[3] * a + c2) % m2;
+				var x3 = (y[4] * a + c2) % m2;
+				var x4 = (y[5] * a + c2) % m2;
+
+				if ((x2 == y[2]) && (x3 == y[3]) && (x4 == y[4]))
+				{
+					Console.WriteLine(m2 + "  " + a2 + "  " + c2);
+				}
+			}
+		}
 
 	}
 }
