@@ -11,15 +11,19 @@ namespace Lab3_1
 			int[] x = new int[3] { -428720726, 2053624065, 974386796 };
 			int m = (int)(Math.Pow(2, 32));
 			double a = find_a(x,m);
-			   // Console.WriteLine(a); // знайшовши а 
-
-			   // Console.WriteLine(c); // знайшовши с - можемо отримати наступне "рандомне" значення 
-			 // результат - наступне значення
+			// Console.WriteLine(a); // знайшовши а 
+			double c = find_c(x, a, m);
+			// Console.WriteLine(c); // знайшовши с - можемо отримати наступне "рандомне" значення 
+			// результат - наступне значення
 
 			//Perevirka();
 
 		}
-
+		public static double find_c(int[] x, double a, int m)
+		{
+			double c = (x[1] - x[0] * a) % m;
+			return c;
+		}
 
 
 		public static double find_a(int [] x,int m) 
